@@ -18,14 +18,14 @@ import os
 load_dotenv()
 
 BIBLIOTECA_URL = os.environ.get('BIBLIOTECA_URL')
-DB_HOST = os.environ.get('DB_HOST', 'localhost')
-DB_PORT = os.environ.get('DB_PORT', '5437')
-DB_USER = os.environ.get('DB_USER', 'biopark')
-DB_PASSWORD = os.environ.get('DB_PASSWORD', 'biopark123')
-DB_NAME = os.environ.get('DB_NAME', 'biblioteca_db')
-TEMPO_ESPERA = int(os.environ.get('TEMPO_ESPERA', '2'))
-TEMPO_ESPERA_RESUMO = int(os.environ.get('TEMPO_ESPERA_RESUMO', '3'))
-MAX_TENTATIVAS = int(os.environ.get('MAX_TENTATIVAS', '3'))
+DB_HOST = os.environ.get('DB_HOST')
+DB_PORT = os.environ.get('DB_PORT')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_NAME = os.environ.get('DB_NAME')
+TEMPO_ESPERA = int(os.environ.get('TEMPO_ESPERA'))
+TEMPO_ESPERA_RESUMO = int(os.environ.get('TEMPO_ESPERA_RESUMO'))
+MAX_TENTATIVAS = int(os.environ.get('MAX_TENTATIVAS'))
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
