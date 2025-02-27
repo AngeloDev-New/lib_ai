@@ -66,10 +66,3 @@ Dados sensíveis (credenciais, URLs, etc.) são mantidos em:
 - Estes arquivos não são versionados (incluídos no `.gitignore`)
 
 Para configurar o ambiente, crie um arquivo `.env` baseado nos arquivos `.env.example` fornecidos.
-
-## Contribuição
-
-Este projeto está em desenvolvimento ativo. Para contribuir:
-1. Crie um fork do repositório
-2. Implemente suas alterações
-3. Envie um pull request
