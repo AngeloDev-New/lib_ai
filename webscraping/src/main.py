@@ -1,4 +1,4 @@
-import time
+# import time
 import os
 import random
 from selenium import webdriver
@@ -14,6 +14,10 @@ from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 import sys
 import os
+# implementando o uso de wait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 load_dotenv()
 
@@ -72,12 +76,14 @@ def buscar_livros():
     try:
         print("Acessando o site da biblioteca...")
         driver.get(BIBLIOTECA_URL)
-        time.sleep(TEMPO_ESPERA)
+        # time.sleep(TEMPO_ESPERA)
         
         print("Realizando busca...")
-        botao_busca = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary[type='submit']")
+        # botao_busca = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary[type='submit']")
+        wait = WebDriverWait(driver, TEMPO_ESPERA)
+        botao_busca = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "button.btn.btn-primary[type='submit']")))
         botao_busca.click()
-        time.sleep(TEMPO_ESPERA)
+        # time.sleep(TEMPO_ESPERA)
         
         livros_pagina = []
         pagina = 1
@@ -88,7 +94,7 @@ def buscar_livros():
             
             url_pagina = f"{BIBLIOTECA_URL.rstrip('/')}/acervo/{pagina}"
             driver.get(url_pagina)
-            time.sleep(TEMPO_ESPERA)
+            # time.sleep(TEMPO_ESPERA)
             
             soup = BeautifulSoup(driver.page_source, 'html.parser')
             
